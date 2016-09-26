@@ -40,6 +40,8 @@ gem "bootstrap-sass"
  gem "guard-rspec" # guard integration with rspec
  # Only install the rb-fsevent gem if on Max OSX
  gem 'rb-fsevent' # used for Growl notifications
+ 
+ gem 'shopify_api'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
