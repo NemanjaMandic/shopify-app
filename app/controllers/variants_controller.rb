@@ -1,6 +1,6 @@
 class VariantsController < ApplicationController
   before_action :set_variant, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_product
   # GET /variants
   # GET /variants.json
   def index
@@ -62,10 +62,19 @@ class VariantsController < ApplicationController
   end
 
   private
+  
+  
     # Use callbacks to share common setup or constraints between actions.
+    
+     def set_product
+      @product = Product.find(params[:product_id])
+     end 
+     
     def set_variant
-      @variant = Variant.find(params[:id])
+      @variant = @product.variants.find(params[:id])
     end
+    
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def variant_params

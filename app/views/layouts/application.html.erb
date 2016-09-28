@@ -49,6 +49,7 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Products", products_path %></li>
+             <li><%= link_to "Orders", orders_path %></li>
             <li><%= link_to "Accounts", accounts_path %></li>
            
             <li><%= link_to "Link3", "/path3"  %></li>
@@ -58,14 +59,24 @@
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        
-        </div><!--/span-->
-      </div><!--/row-->
+      <div class="row-fluid">
+       <% if content_for?(:sidebar) %>
+         <div class="span3">
+           <div class="well sidebar-nav">
+             <%= yield(:sidebar) %>
+           </div>
+         </div>
+       <div class="span9">
+         <%= bootstrap_flash %>
+         <%= yield %>
+       </div>
+       <% else %>
+     <div class="span12">
+       <%= bootstrap_flash %>
+       <%= yield %>
+     </div>
+     <% end %>
+    </div>
 
       <footer>
         <p>&copy; Company 2016</p>

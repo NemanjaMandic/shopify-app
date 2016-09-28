@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
  
-  resources :variants
-  resources :products
+ 
+ 
+  resources :orders
   root 'dashboard#index'
   
   resources :accounts do
@@ -10,6 +11,12 @@ Rails.application.routes.draw do
      end
   end
 
+   resources :products do
+     collection do
+        get 'import'
+     end
+        resources :variants
+   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
