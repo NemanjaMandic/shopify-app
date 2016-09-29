@@ -42,7 +42,28 @@
          <input type="submit" value="Submit" class="btn"/>
          <%= link_to t('.cancel', :default =>
          t("helpers.links.cancel")),
-         dashboard_index_path, :class => 'btn' %>
+         :back, :class => 'btn' %>
      </div>
      </form>
+     
+     <h1>Contests</h1>
+    <table class="table table-striped">
+     <thead>
+         <tr>
+             <th>Name</th>
+             <th>Criteria</th>
+             <th>Winner</th>
+             <th>Date</th>
+         </tr>
+     </thead>
+     <tbody>
+     <tr>
+         <td>Customer Appreciation Giveaway</td>
+         <td>Purchase made within last 30 days</td>
+         <td>Order #1010, John Doe</td>
+         <td>October 22, 2013</td>
+     </tr>
+     </tbody>
+    </table> 
+
 <%- end -%>
